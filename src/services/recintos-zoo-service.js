@@ -82,16 +82,11 @@ export default class RecintosZooService {
 
   formataSaida(recintosCompativeis) {
 
-    let recintos = recintosCompativeis.map(recinto => {
+    let recintosViaveis = recintosCompativeis.map(recinto => {
       return `Recinto ${recinto.numero} (espaço livre: ${recinto.tamanhoTotal - recinto.espacoOcupado} total: ${recinto.tamanhoTotal})`;
     });
 
-    const result = {
-      recintosViaveis: recintos,
-      erro: false
-    };
-
-    return result;
+    return { recintosViaveis };
 
   }
 }
